@@ -20,11 +20,11 @@ img = cv2.imread("extract.png")
 for Vofset in range(0, 7):
     for Hofset in range(0,15):
         fromH = charH+(2*charH*Vofset)
-        fromV = charW+(2*charW*Hofset)
+        fromW = charW+(2*charW*Hofset)
         untilH = 2*charH+(2*charH*Vofset)
-        untilV = 2*charW+(2*charW*Hofset)
+        untilW = 2*charW+(2*charW*Hofset)
         num = Vofset*15 + Hofset + 32
         if num <= 126:
             print(f'Saved Image {num}')
-            crop_img = img[fromH:untilH, fromV:untilV]
+            crop_img = img[fromH:untilH, fromW:untilW]
             cv2.imwrite(f'{num}.png', crop_img)
